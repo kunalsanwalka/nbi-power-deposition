@@ -429,7 +429,7 @@ if __name__ == "__main__":
     beamPower = 1e6 # W
 
     # Load the plasma density profile from Pleiades
-    pleiadesPath = '/home/sanwalka/shinethru/pleiades_260105053.h5'
+    pleiadesPath = '/home/sanwalka/nbi_power_deposition/pleiades_260105053.h5'
     interpFunc = load_density_profile(pleiadesPath)
 
     # # Change to the toy density profile for testing purposes
@@ -474,7 +474,7 @@ if __name__ == "__main__":
     # Plot the deposition profile for a single particle track
     _ = single_particle_deposition_profile(25e3, interpFunc, pointsArrLab[0], makeplot=True)
 
-    # Calculate the power deposition profile interpolation function
+    # Calculate the power deposition profile interpolation functionP@th2Fusion
     powerInterpFunc = deposition_profile(beamEnergy, beamPower, interpFunc, beamletDiv, makeplot=True)
 
     stopTime = time.time()
