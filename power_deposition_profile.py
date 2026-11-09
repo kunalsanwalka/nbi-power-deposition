@@ -69,7 +69,6 @@ def load_density_profile(densityProfileFilePath, makeplot=False):
     """
     This function loads the density profile from a given .hdf5 file and creates an interpolation function.
 
-
     Parameters
     ----------
     densityProfileFilePath : str
@@ -100,7 +99,11 @@ def load_density_profile(densityProfileFilePath, makeplot=False):
     z1dArr = zArr[:, 0]
 
     # Create an interpolation function for the density profile
-    interpFunc = sc.interpolate.RegularGridInterpolator((r1dArr, z1dArr), densityArr, method='linear', bounds_error=False, fill_value=0)
+    interpFunc = sc.interpolate.RegularGridInterpolator((r1dArr, z1dArr), 
+                                                        densityArr, 
+                                                        method='linear', 
+                                                        bounds_error=False, 
+                                                        fill_value=0)
 
     if makeplot == True:
 
